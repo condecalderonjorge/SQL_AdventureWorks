@@ -1,8 +1,8 @@
 # SQL — AdventureWorks (Datamart, ETL & Queries)
 
 **Autor:** Jorge Conde Calderón  
-**DB base:** AdventureWorks (OLTP)  
-**Stack:** SQL Server · T-SQL · ETL (views/stored procedures)
+**DB base:** AdventureWorks2017
+**Stack:** SQL Server · PowerBI · ETL (views/stored procedures)
 
 > 🚧 **Estado**: Under construction. Este repositorio se irá completando con los ETL y queries finales a medida que avance el proyecto.
 

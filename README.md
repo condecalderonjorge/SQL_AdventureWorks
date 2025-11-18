@@ -23,11 +23,42 @@ Construir un **datamart ligero** sobre AdventureWorks con las dimensiones **Date
 ---
 
 ## 🧱 Modelo (resumen)
-- **dm.DimDate**(`DateKey` int, `Date`, `Year`, `Quarter`, `Month`, `MonthName`, `YearMonth`, `WeekOfYear`, `DayOfMonth`, `DayName`, `IsWeekend`)  
-- **dm.DimCustomer**(`CustomerKey`, `CustomerAlternateKey`, `PersonType`, `FullName`, `EmailAddress`, `Phone`, `StoreName`, `TerritoryKey`)  
-- **dm.DimProduct**(`ProductKey`, `ProductAlternateKey`, `ProductName`, `Subcategory`, `Category`, `Color`, `Size`, `StandardCost`, `ListPrice`)  
-- **dm.DimTerritory**(`TerritoryKey`, `TerritoryAlternateKey`, `Name`, `CountryRegionCode`, `Group`)  
-- **dm.FactSales**(`DateKey`, `CustomerKey`, `ProductKey`, `TerritoryKey`, `SalesOrderID`, `SalesOrderDetailID`, `OrderQty`, `UnitPriceUSD`, `LineTotalUSD`, `TaxAmtUSD`, `FreightUSD`, `DaysToShip`, `Channel`)
+- **dbo.DW_Fact_Sales**(``SalesID BIGINT PRIMARY KEY``
+	,``OrderDate DATE``
+	,``OrderDateKey INT``
+	,ShipDate DATE
+	,ShipDateKey INT
+	,DaysToShip INT
+	,Status VARCHAR(255)
+	,OrderFlag VARCHAR(255)
+	,SalesOrderNumber VARCHAR(255)
+	,AccountNumber VARCHAR(255)
+	,CUstomerID INT
+	,SalesPersonID INT
+	,TerritoryID INT
+	,BillToAdressID INT
+	,ShipToAdressID INT
+	,ShipMethodID INT
+	,Currency VARCHAR(255)
+	,CurrencyName VARCHAR(255)
+	,SubTotalUSDDollar NUMERIC(38,4)
+	,SubTotal NUMERIC(38,4)
+	,TaxAmtUSDDollar NUMERIC(38,4)
+	,TaxAmt NUMERIC(38,4)
+	,FreighUSDDollar NUMERIC(38,4)
+	,Freigh NUMERIC(38,4)
+	,TotalDueUSDDollar NUMERIC(38,4)
+	,TotalDue NUMERIC(38,4)
+	,PercentageTax NUMERIC(38,2)
+	,FreightTax NUMERIC(38,2)
+	,OrderQty INT
+	,ProductID INT
+	,UnitPrice NUMERIC(38,4)
+	,LineTotal NUMERIC(38,4)
+	,PercentageOfTotal NUMERIC(38,4) 
+- **dbo.DW_Dim_Date**(`CustomerKey`, `CustomerAlternateKey`, `PersonType`, `FullName`, `EmailAddress`, `Phone`, `StoreName`, `TerritoryKey`)  
+- **dbo.DW_Dim_ShipMethod**(`ProductKey`, `ProductAlternateKey`, `ProductName`, `Subcategory`, `Category`, `Color`, `Size`, `StandardCost`, `ListPrice`)  
+- **dbo.DW_Dim_Product**(`TerritoryKey`, `TerritoryAlternateKey`, `Name`, `CountryRegionCode`, `Group`) 
 
 ---
 

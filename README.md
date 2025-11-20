@@ -1,4 +1,4 @@
-# SQL — AdventureWorks (Datamart, ETL & Queries)
+# AdventureWorks (DataWarehouse, ETL & Queries)
 
 **Autor:** Jorge Conde Calderón  
 **DB base:** AdventureWorks2017  
